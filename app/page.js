@@ -6,19 +6,19 @@ export default function Page() {
         <button className="bg-blue-400 py-2 px-4">add</button>
       </div>
 
-      <Task />
-      <Task />
-      <Task />
-      <Task />
-      <Task />
+      <Task text="hicheelee dawtah" />
+      <Task text="hooloo hiih" />
+      <Task text="ger tsewrleh" />
+      <Task text="nom unshih" />
+      <Task text="dvvge harah" />
     </div>
   );
 }
 
-function Task() {
+function Task({ text }) {
   return (
     <div className="border bg-white p-4 mt-4 flex justify-between">
-      <div>hicheelee davtah</div>
+      <div className="text-gray-500">{text}</div>
 
       <button className="text-sm text-red-800 cursor-pointer px-2 rounded hover:bg-gray-200">Delete</button>
     </div>
