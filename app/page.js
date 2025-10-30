@@ -1,26 +1,34 @@
+"use client";
+
+const tasks = ["hicheelee dawtah", "hooloo hiih", "geree tseverleh"];
+
 export default function Page() {
   return (
-    <div className="bg-gray-50 p-16 max-w-lg mx-auto mt-24">
+    <div className="bg-pink-50 rounded-2xl p-16 max-w-lg mx-auto mt-24">
       <div className="flex gap-2">
-        <input className="border flex-1 bg-white" />
-        <button className="bg-blue-400 py-2 px-4">add</button>
+        <input className="border rounded-2xl flex-1 bg-white" />
+
+        <button className="bg-pink-400 py-2 px-4 rounded-2xl">add</button>
       </div>
 
-      <Task text="hicheelee dawtah" />
-      <Task text="hooloo hiih" />
-      <Task text="ger tsewrleh" />
-      <Task text="nom unshih" />
-      <Task text="dvvge harah" />
+      {tasks.map((task) => (
+        <Task key={task} text={task} />
+      ))}
     </div>
   );
 }
 
 function Task({ text }) {
   return (
-    <div className="border bg-white p-4 mt-4 flex justify-between">
-      <div className="text-gray-500">{text}</div>
-
-      <button className="text-sm text-red-800 cursor-pointer px-2 rounded hover:bg-gray-200">Delete</button>
+    <div className="border bg-white p-4 mt-4 flex justify-between rounded-3xl">
+      <div className="text-gray-500">
+        <input type="checkbox" />
+        {text}
+      </div>
+      <div className="flex-gap-2">
+        <button className="text-sm text-green-800 cursor-pointer px-2 rounded hover:bg-gray-200 ">zasah</button>
+        <button className="text-sm text-red-800 cursor-pointer px-2 rounded hover:bg-gray-200">Delete</button>
+      </div>
     </div>
   );
 }
